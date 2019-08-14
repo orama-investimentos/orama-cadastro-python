@@ -1,4 +1,4 @@
-# openapi_client.UsersApi
+# cadastro_orama.UsersApi
 
 All URIs are relative to *https://cadastro.orama.com.br/api/contas/v1.0*
 
@@ -34,18 +34,18 @@ Autentica um usuário que ainda não é cliente, caso o usuário não existe, ou
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import cadastro_orama
+from cadastro_orama.rest import ApiException
 from pprint import pprint
-configuration = openapi_client.Configuration()
+configuration = cadastro_orama.Configuration()
 # Configure Bearer authorization (JWT): JWT
 configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://cadastro.orama.com.br/api/contas/v1.0
 configuration.host = "https://cadastro.orama.com.br/api/contas/v1.0"
 # Create an instance of the API class
-api_instance = openapi_client.UsersApi(openapi_client.ApiClient(configuration))
-usuario_senha_objeto = openapi_client.UsuarioSenhaObjeto() # UsuarioSenhaObjeto | Dados para autenticação do usuário
+api_instance = cadastro_orama.UsersApi(cadastro_orama.ApiClient(configuration))
+usuario_senha_objeto = cadastro_orama.UsuarioSenhaObjeto() # UsuarioSenhaObjeto | Dados para autenticação do usuário
 
 try:
     # Autentica um usuário que ainda não é cliente.
@@ -98,17 +98,17 @@ Consulta o status de confirmação do documento que foi submetido
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import cadastro_orama
+from cadastro_orama.rest import ApiException
 from pprint import pprint
-configuration = openapi_client.Configuration()
+configuration = cadastro_orama.Configuration()
 # Configure Bearer authorization (JWT): JWT
 configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://cadastro.orama.com.br/api/contas/v1.0
 configuration.host = "https://cadastro.orama.com.br/api/contas/v1.0"
 # Create an instance of the API class
-api_instance = openapi_client.UsersApi(openapi_client.ApiClient(configuration))
+api_instance = cadastro_orama.UsersApi(cadastro_orama.ApiClient(configuration))
 cpf = 'cpf_example' # str | CPF do perfil
 tipo_documento = 'Passaporte' # str | Tipo do documento
 
@@ -165,17 +165,17 @@ Anexa ou atualiza documento que será usado no processo conferencia de autentici
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import cadastro_orama
+from cadastro_orama.rest import ApiException
 from pprint import pprint
-configuration = openapi_client.Configuration()
+configuration = cadastro_orama.Configuration()
 # Configure Bearer authorization (JWT): JWT
 configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://cadastro.orama.com.br/api/contas/v1.0
 configuration.host = "https://cadastro.orama.com.br/api/contas/v1.0"
 # Create an instance of the API class
-api_instance = openapi_client.UsersApi(openapi_client.ApiClient(configuration))
+api_instance = cadastro_orama.UsersApi(cadastro_orama.ApiClient(configuration))
 cpf = 'cpf_example' # str | CPF do perfil
 tipo_documento = 'Passaporte' # str | Tipo do documento
 name = 'name_example' # str | Nome do atributo codificado em form-data 'image'
@@ -234,13 +234,13 @@ Cria um novo login que será usado para acesso ao sistema.
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import cadastro_orama
+from cadastro_orama.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.UsersApi()
-login_senha_objeto = openapi_client.LoginSenhaObjeto() # LoginSenhaObjeto | Dados para criação do login
+api_instance = cadastro_orama.UsersApi()
+login_senha_objeto = cadastro_orama.LoginSenhaObjeto() # LoginSenhaObjeto | Dados para criação do login
 
 try:
     # Cria um login para usuário.
@@ -291,17 +291,17 @@ Retorna o estado de aprovação de um perfil
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import cadastro_orama
+from cadastro_orama.rest import ApiException
 from pprint import pprint
-configuration = openapi_client.Configuration()
+configuration = cadastro_orama.Configuration()
 # Configure Bearer authorization (JWT): JWT
 configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://cadastro.orama.com.br/api/contas/v1.0
 configuration.host = "https://cadastro.orama.com.br/api/contas/v1.0"
 # Create an instance of the API class
-api_instance = openapi_client.UsersApi(openapi_client.ApiClient(configuration))
+api_instance = cadastro_orama.UsersApi(cadastro_orama.ApiClient(configuration))
 cpf = 'cpf_example' # str | CPF do perfil
 
 try:
@@ -354,17 +354,17 @@ Estado atual de confirmação do celular
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import cadastro_orama
+from cadastro_orama.rest import ApiException
 from pprint import pprint
-configuration = openapi_client.Configuration()
+configuration = cadastro_orama.Configuration()
 # Configure Bearer authorization (JWT): JWT
 configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://cadastro.orama.com.br/api/contas/v1.0
 configuration.host = "https://cadastro.orama.com.br/api/contas/v1.0"
 # Create an instance of the API class
-api_instance = openapi_client.UsersApi(openapi_client.ApiClient(configuration))
+api_instance = cadastro_orama.UsersApi(cadastro_orama.ApiClient(configuration))
 cpf = 'cpf_example' # str | CPF do perfil
 
 try:
@@ -419,17 +419,17 @@ Gera um código para iniciar o processo de validação do número do celular
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import cadastro_orama
+from cadastro_orama.rest import ApiException
 from pprint import pprint
-configuration = openapi_client.Configuration()
+configuration = cadastro_orama.Configuration()
 # Configure Bearer authorization (JWT): JWT
 configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://cadastro.orama.com.br/api/contas/v1.0
 configuration.host = "https://cadastro.orama.com.br/api/contas/v1.0"
 # Create an instance of the API class
-api_instance = openapi_client.UsersApi(openapi_client.ApiClient(configuration))
+api_instance = cadastro_orama.UsersApi(cadastro_orama.ApiClient(configuration))
 cpf = 'cpf_example' # str | CPF do perfil
 
 try:
@@ -481,17 +481,17 @@ Confirma o numero de celular, concluindo a validação
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import cadastro_orama
+from cadastro_orama.rest import ApiException
 from pprint import pprint
-configuration = openapi_client.Configuration()
+configuration = cadastro_orama.Configuration()
 # Configure Bearer authorization (JWT): JWT
 configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://cadastro.orama.com.br/api/contas/v1.0
 configuration.host = "https://cadastro.orama.com.br/api/contas/v1.0"
 # Create an instance of the API class
-api_instance = openapi_client.UsersApi(openapi_client.ApiClient(configuration))
+api_instance = cadastro_orama.UsersApi(cadastro_orama.ApiClient(configuration))
 cpf = 'cpf_example' # str | CPF do perfil
 codigo = '1341' # str | Código de validação para confirmar o número de celular
 
@@ -549,17 +549,17 @@ Estado atual de confirmação do email
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import cadastro_orama
+from cadastro_orama.rest import ApiException
 from pprint import pprint
-configuration = openapi_client.Configuration()
+configuration = cadastro_orama.Configuration()
 # Configure Bearer authorization (JWT): JWT
 configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://cadastro.orama.com.br/api/contas/v1.0
 configuration.host = "https://cadastro.orama.com.br/api/contas/v1.0"
 # Create an instance of the API class
-api_instance = openapi_client.UsersApi(openapi_client.ApiClient(configuration))
+api_instance = cadastro_orama.UsersApi(cadastro_orama.ApiClient(configuration))
 cpf = 'cpf_example' # str | CPF do perfil
 
 try:
@@ -614,17 +614,17 @@ Gera um código para iniciar o processo de validação do email
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import cadastro_orama
+from cadastro_orama.rest import ApiException
 from pprint import pprint
-configuration = openapi_client.Configuration()
+configuration = cadastro_orama.Configuration()
 # Configure Bearer authorization (JWT): JWT
 configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://cadastro.orama.com.br/api/contas/v1.0
 configuration.host = "https://cadastro.orama.com.br/api/contas/v1.0"
 # Create an instance of the API class
-api_instance = openapi_client.UsersApi(openapi_client.ApiClient(configuration))
+api_instance = cadastro_orama.UsersApi(cadastro_orama.ApiClient(configuration))
 cpf = 'cpf_example' # str | CPF do perfil
 
 try:
@@ -676,17 +676,17 @@ Confirma o email, concluindo a validação
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import cadastro_orama
+from cadastro_orama.rest import ApiException
 from pprint import pprint
-configuration = openapi_client.Configuration()
+configuration = cadastro_orama.Configuration()
 # Configure Bearer authorization (JWT): JWT
 configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://cadastro.orama.com.br/api/contas/v1.0
 configuration.host = "https://cadastro.orama.com.br/api/contas/v1.0"
 # Create an instance of the API class
-api_instance = openapi_client.UsersApi(openapi_client.ApiClient(configuration))
+api_instance = cadastro_orama.UsersApi(cadastro_orama.ApiClient(configuration))
 cpf = 'cpf_example' # str | CPF do perfil
 codigo = '1341' # str | Código de validação para confirmar o email
 
@@ -744,17 +744,17 @@ Retorna o perfil de um usuário que ainda não foi transformado em cliente.
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import cadastro_orama
+from cadastro_orama.rest import ApiException
 from pprint import pprint
-configuration = openapi_client.Configuration()
+configuration = cadastro_orama.Configuration()
 # Configure Bearer authorization (JWT): JWT
 configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://cadastro.orama.com.br/api/contas/v1.0
 configuration.host = "https://cadastro.orama.com.br/api/contas/v1.0"
 # Create an instance of the API class
-api_instance = openapi_client.UsersApi(openapi_client.ApiClient(configuration))
+api_instance = cadastro_orama.UsersApi(cadastro_orama.ApiClient(configuration))
 cpf = 'cpf_example' # str | CPF do perfil
 campos = 'login,profissao,usPerson' # str | Lista de campos para ser inclusivamente filtrados (optional)
 
@@ -811,17 +811,17 @@ Submete o perfil de usuário associado a um login para ser criado como cliente. 
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import cadastro_orama
+from cadastro_orama.rest import ApiException
 from pprint import pprint
-configuration = openapi_client.Configuration()
+configuration = cadastro_orama.Configuration()
 # Configure Bearer authorization (JWT): JWT
 configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://cadastro.orama.com.br/api/contas/v1.0
 configuration.host = "https://cadastro.orama.com.br/api/contas/v1.0"
 # Create an instance of the API class
-api_instance = openapi_client.UsersApi(openapi_client.ApiClient(configuration))
+api_instance = cadastro_orama.UsersApi(cadastro_orama.ApiClient(configuration))
 cpf = 'cpf_example' # str | CPF do perfil
 
 try:
@@ -877,19 +877,19 @@ Atualiza um perfil de usuário associado a um login para o processo de criação
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import cadastro_orama
+from cadastro_orama.rest import ApiException
 from pprint import pprint
-configuration = openapi_client.Configuration()
+configuration = cadastro_orama.Configuration()
 # Configure Bearer authorization (JWT): JWT
 configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://cadastro.orama.com.br/api/contas/v1.0
 configuration.host = "https://cadastro.orama.com.br/api/contas/v1.0"
 # Create an instance of the API class
-api_instance = openapi_client.UsersApi(openapi_client.ApiClient(configuration))
+api_instance = cadastro_orama.UsersApi(cadastro_orama.ApiClient(configuration))
 cpf = 'cpf_example' # str | CPF do perfil
-perfil_usuario = openapi_client.PerfilUsuario() # PerfilUsuario | Dados para criação ou atualização do perfil
+perfil_usuario = cadastro_orama.PerfilUsuario() # PerfilUsuario | Dados para criação ou atualização do perfil
 
 try:
     # Atualiza perfil para criação de conta.
@@ -942,17 +942,17 @@ Retorna o estado de submissão de um perfil
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import cadastro_orama
+from cadastro_orama.rest import ApiException
 from pprint import pprint
-configuration = openapi_client.Configuration()
+configuration = cadastro_orama.Configuration()
 # Configure Bearer authorization (JWT): JWT
 configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://cadastro.orama.com.br/api/contas/v1.0
 configuration.host = "https://cadastro.orama.com.br/api/contas/v1.0"
 # Create an instance of the API class
-api_instance = openapi_client.UsersApi(openapi_client.ApiClient(configuration))
+api_instance = cadastro_orama.UsersApi(cadastro_orama.ApiClient(configuration))
 cpf = 'cpf_example' # str | CPF do perfil
 
 try:

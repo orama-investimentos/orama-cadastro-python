@@ -1,4 +1,4 @@
-# openapi_client.DevelopersApi
+# cadastro_orama.DevelopersApi
 
 All URIs are relative to *https://cadastro.orama.com.br/api/contas/v1.0*
 
@@ -20,10 +20,10 @@ Returna uma lista composta por objetos do tipo perfil
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import cadastro_orama
+from cadastro_orama.rest import ApiException
 from pprint import pprint
-configuration = openapi_client.Configuration()
+configuration = cadastro_orama.Configuration()
 # Configure API key authorization: Api-Key
 configuration.api_key['Api-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -32,7 +32,7 @@ configuration.api_key['Api-Key'] = 'YOUR_API_KEY'
 # Defining host is optional and default to https://cadastro.orama.com.br/api/contas/v1.0
 configuration.host = "https://cadastro.orama.com.br/api/contas/v1.0"
 # Create an instance of the API class
-api_instance = openapi_client.DevelopersApi(openapi_client.ApiClient(configuration))
+api_instance = cadastro_orama.DevelopersApi(cadastro_orama.ApiClient(configuration))
 limite = 1000 # float | Número máximo de elementos (optional)
 deslocamento = 10 # float | Número de deslocamento (offset) dos elementos (optional)
 campos = 'login,profissao,usPerson' # str | Lista de campos para ser inclusivamente filtrados (optional)
