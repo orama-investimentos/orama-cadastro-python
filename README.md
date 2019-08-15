@@ -52,10 +52,8 @@ from cadastro_orama.rest import ApiException
 from pprint import pprint
 
 configuration = cadastro_orama.Configuration()
-# Configure API key authorization: Api-Key
-configuration.api_key['Api-Key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Api-Key'] = 'Bearer'
+# Configure Bearer authorization (Api-Key): Api-Key
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://cadastro.orama.com.br/api/contas/v1.0
 configuration.host = "https://cadastro.orama.com.br/api/contas/v1.0"
@@ -125,9 +123,7 @@ Class | Method | HTTP request | Description
 
 ## Api-Key
 
-- **Type**: API key
-- **API key parameter name**: Api-Key
-- **Location**: HTTP header
+- **Type**: Bearer authentication (Api-Key)
 
 
 ## JWT

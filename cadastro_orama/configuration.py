@@ -253,10 +253,11 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         return {
             'Api-Key':
                 {
-                    'type': 'api_key',
+                    'type': 'bearer',
                     'in': 'header',
-                    'key': 'Api-Key',
-                    'value': self.get_api_key_with_prefix('Api-Key')
+                    'format': 'Api-Key',
+                    'key': 'Authorization',
+                    'value': 'Bearer ' + self.access_token
                 },
             'JWT':
                 {
