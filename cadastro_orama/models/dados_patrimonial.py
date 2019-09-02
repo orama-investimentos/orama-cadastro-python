@@ -32,148 +32,148 @@ class DadosPatrimonial(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'valor_de_patrimonio': 'str',
-        'valor_de_investimento': 'float',
-        'rendimento_mensal': 'str',
-        'outros_bens_valor': 'float'
+        'faixa_aplicacoes': 'str',
+        'valor_aplicacoes': 'float',
+        'faixa_rendimentos': 'str',
+        'valor_outros_bens': 'float'
     }
 
     attribute_map = {
-        'valor_de_patrimonio': 'valorDePatrimonio',
-        'valor_de_investimento': 'valorDeInvestimento',
-        'rendimento_mensal': 'rendimentoMensal',
-        'outros_bens_valor': 'outrosBensValor'
+        'faixa_aplicacoes': 'faixaAplicacoes',
+        'valor_aplicacoes': 'valorAplicacoes',
+        'faixa_rendimentos': 'faixaRendimentos',
+        'valor_outros_bens': 'valorOutrosBens'
     }
 
-    def __init__(self, valor_de_patrimonio=None, valor_de_investimento=None, rendimento_mensal=None, outros_bens_valor=None):  # noqa: E501
+    def __init__(self, faixa_aplicacoes=None, valor_aplicacoes=None, faixa_rendimentos=None, valor_outros_bens=None):  # noqa: E501
         """DadosPatrimonial - a model defined in OpenAPI"""  # noqa: E501
 
-        self._valor_de_patrimonio = None
-        self._valor_de_investimento = None
-        self._rendimento_mensal = None
-        self._outros_bens_valor = None
+        self._faixa_aplicacoes = None
+        self._valor_aplicacoes = None
+        self._faixa_rendimentos = None
+        self._valor_outros_bens = None
         self.discriminator = None
 
-        if valor_de_patrimonio is not None:
-            self.valor_de_patrimonio = valor_de_patrimonio
-        if valor_de_investimento is not None:
-            self.valor_de_investimento = valor_de_investimento
-        if rendimento_mensal is not None:
-            self.rendimento_mensal = rendimento_mensal
-        if outros_bens_valor is not None:
-            self.outros_bens_valor = outros_bens_valor
+        if faixa_aplicacoes is not None:
+            self.faixa_aplicacoes = faixa_aplicacoes
+        if valor_aplicacoes is not None:
+            self.valor_aplicacoes = valor_aplicacoes
+        if faixa_rendimentos is not None:
+            self.faixa_rendimentos = faixa_rendimentos
+        if valor_outros_bens is not None:
+            self.valor_outros_bens = valor_outros_bens
 
     @property
-    def valor_de_patrimonio(self):
-        """Gets the valor_de_patrimonio of this DadosPatrimonial.  # noqa: E501
+    def faixa_aplicacoes(self):
+        """Gets the faixa_aplicacoes of this DadosPatrimonial.  # noqa: E501
 
-        Código do valor total do patrimonio. Cada número representa um intervalo de valor em reais (R$). Por exemplo, '0': 'Nenhum', '1': 'Até R$50.000,00', '2': 'De R$50.000,01 à R$100.000,00', '3': 'De R$100.000,01 à R$200.000,00', '4': 'De R$200.000,01 à R$300.000,00', '5': 'De R$300.000,01 à R$1.000.000,00', '6': 'Acima de R$1.000.000,00'  # noqa: E501
+        Código do valor total em aplicações financeiras considerando outras instituições. Cada número representa um intervalo de valor em reais (R$). Por exemplo, '0': 'Nenhum', '1': 'Até R$50.000,00', '2': 'De R$50.000,01 à R$100.000,00', '3': 'De R$100.000,01 à R$200.000,00', '4': 'De R$200.000,01 à R$300.000,00', '5': 'De R$300.000,01 à R$1.000.000,00', '6': 'Acima de R$1.000.000,00'  # noqa: E501
 
-        :return: The valor_de_patrimonio of this DadosPatrimonial.  # noqa: E501
+        :return: The faixa_aplicacoes of this DadosPatrimonial.  # noqa: E501
         :rtype: str
         """
-        return self._valor_de_patrimonio
+        return self._faixa_aplicacoes
 
-    @valor_de_patrimonio.setter
-    def valor_de_patrimonio(self, valor_de_patrimonio):
-        """Sets the valor_de_patrimonio of this DadosPatrimonial.
+    @faixa_aplicacoes.setter
+    def faixa_aplicacoes(self, faixa_aplicacoes):
+        """Sets the faixa_aplicacoes of this DadosPatrimonial.
 
-        Código do valor total do patrimonio. Cada número representa um intervalo de valor em reais (R$). Por exemplo, '0': 'Nenhum', '1': 'Até R$50.000,00', '2': 'De R$50.000,01 à R$100.000,00', '3': 'De R$100.000,01 à R$200.000,00', '4': 'De R$200.000,01 à R$300.000,00', '5': 'De R$300.000,01 à R$1.000.000,00', '6': 'Acima de R$1.000.000,00'  # noqa: E501
+        Código do valor total em aplicações financeiras considerando outras instituições. Cada número representa um intervalo de valor em reais (R$). Por exemplo, '0': 'Nenhum', '1': 'Até R$50.000,00', '2': 'De R$50.000,01 à R$100.000,00', '3': 'De R$100.000,01 à R$200.000,00', '4': 'De R$200.000,01 à R$300.000,00', '5': 'De R$300.000,01 à R$1.000.000,00', '6': 'Acima de R$1.000.000,00'  # noqa: E501
 
-        :param valor_de_patrimonio: The valor_de_patrimonio of this DadosPatrimonial.  # noqa: E501
+        :param faixa_aplicacoes: The faixa_aplicacoes of this DadosPatrimonial.  # noqa: E501
         :type: str
         """
         allowed_values = ["0", "1", "2", "3", "4", "5", "6"]  # noqa: E501
-        if valor_de_patrimonio not in allowed_values:
+        if faixa_aplicacoes not in allowed_values:
             raise ValueError(
-                "Invalid value for `valor_de_patrimonio` ({0}), must be one of {1}"  # noqa: E501
-                .format(valor_de_patrimonio, allowed_values)
+                "Invalid value for `faixa_aplicacoes` ({0}), must be one of {1}"  # noqa: E501
+                .format(faixa_aplicacoes, allowed_values)
             )
 
-        self._valor_de_patrimonio = valor_de_patrimonio
+        self._faixa_aplicacoes = faixa_aplicacoes
 
     @property
-    def valor_de_investimento(self):
-        """Gets the valor_de_investimento of this DadosPatrimonial.  # noqa: E501
+    def valor_aplicacoes(self):
+        """Gets the valor_aplicacoes of this DadosPatrimonial.  # noqa: E501
 
-        Valor em R$ disponível para investimento  # noqa: E501
+        Valor total em R$ em aplicações financeiras, considerando outras instituições. Este campo só deve ser preenchido caso 'faixaAplicacoes' seja acima de R$ 1.000.000,00  # noqa: E501
 
-        :return: The valor_de_investimento of this DadosPatrimonial.  # noqa: E501
+        :return: The valor_aplicacoes of this DadosPatrimonial.  # noqa: E501
         :rtype: float
         """
-        return self._valor_de_investimento
+        return self._valor_aplicacoes
 
-    @valor_de_investimento.setter
-    def valor_de_investimento(self, valor_de_investimento):
-        """Sets the valor_de_investimento of this DadosPatrimonial.
+    @valor_aplicacoes.setter
+    def valor_aplicacoes(self, valor_aplicacoes):
+        """Sets the valor_aplicacoes of this DadosPatrimonial.
 
-        Valor em R$ disponível para investimento  # noqa: E501
+        Valor total em R$ em aplicações financeiras, considerando outras instituições. Este campo só deve ser preenchido caso 'faixaAplicacoes' seja acima de R$ 1.000.000,00  # noqa: E501
 
-        :param valor_de_investimento: The valor_de_investimento of this DadosPatrimonial.  # noqa: E501
+        :param valor_aplicacoes: The valor_aplicacoes of this DadosPatrimonial.  # noqa: E501
         :type: float
         """
-        if valor_de_investimento is not None and valor_de_investimento > 999999999999.99:  # noqa: E501
-            raise ValueError("Invalid value for `valor_de_investimento`, must be a value less than or equal to `999999999999.99`")  # noqa: E501
-        if valor_de_investimento is not None and valor_de_investimento < 0.1:  # noqa: E501
-            raise ValueError("Invalid value for `valor_de_investimento`, must be a value greater than or equal to `0.1`")  # noqa: E501
+        if valor_aplicacoes is not None and valor_aplicacoes > 999999999999.99:  # noqa: E501
+            raise ValueError("Invalid value for `valor_aplicacoes`, must be a value less than or equal to `999999999999.99`")  # noqa: E501
+        if valor_aplicacoes is not None and valor_aplicacoes < 1000000:  # noqa: E501
+            raise ValueError("Invalid value for `valor_aplicacoes`, must be a value greater than or equal to `1000000`")  # noqa: E501
 
-        self._valor_de_investimento = valor_de_investimento
+        self._valor_aplicacoes = valor_aplicacoes
 
     @property
-    def rendimento_mensal(self):
-        """Gets the rendimento_mensal of this DadosPatrimonial.  # noqa: E501
+    def faixa_rendimentos(self):
+        """Gets the faixa_rendimentos of this DadosPatrimonial.  # noqa: E501
 
         Código do valor que representa a renta bruta mensal. Cada número representa um intervalo de valor em reais (R$). Por exemplo, '0': 'Nenhum', '1': 'Até R$5.000,00', '2': 'De R$5.000,01 à R$10.000,00', '3': 'De R$10.000,01 à R$20.000,00', '4': 'De R$20.000,01 à R$30.000,00', '5': 'De R$30.000,01 à R$100.000,00', '6': 'Acima de R$100.000,00'  # noqa: E501
 
-        :return: The rendimento_mensal of this DadosPatrimonial.  # noqa: E501
+        :return: The faixa_rendimentos of this DadosPatrimonial.  # noqa: E501
         :rtype: str
         """
-        return self._rendimento_mensal
+        return self._faixa_rendimentos
 
-    @rendimento_mensal.setter
-    def rendimento_mensal(self, rendimento_mensal):
-        """Sets the rendimento_mensal of this DadosPatrimonial.
+    @faixa_rendimentos.setter
+    def faixa_rendimentos(self, faixa_rendimentos):
+        """Sets the faixa_rendimentos of this DadosPatrimonial.
 
         Código do valor que representa a renta bruta mensal. Cada número representa um intervalo de valor em reais (R$). Por exemplo, '0': 'Nenhum', '1': 'Até R$5.000,00', '2': 'De R$5.000,01 à R$10.000,00', '3': 'De R$10.000,01 à R$20.000,00', '4': 'De R$20.000,01 à R$30.000,00', '5': 'De R$30.000,01 à R$100.000,00', '6': 'Acima de R$100.000,00'  # noqa: E501
 
-        :param rendimento_mensal: The rendimento_mensal of this DadosPatrimonial.  # noqa: E501
+        :param faixa_rendimentos: The faixa_rendimentos of this DadosPatrimonial.  # noqa: E501
         :type: str
         """
         allowed_values = ["0", "1", "2", "3", "4", "5", "6"]  # noqa: E501
-        if rendimento_mensal not in allowed_values:
+        if faixa_rendimentos not in allowed_values:
             raise ValueError(
-                "Invalid value for `rendimento_mensal` ({0}), must be one of {1}"  # noqa: E501
-                .format(rendimento_mensal, allowed_values)
+                "Invalid value for `faixa_rendimentos` ({0}), must be one of {1}"  # noqa: E501
+                .format(faixa_rendimentos, allowed_values)
             )
 
-        self._rendimento_mensal = rendimento_mensal
+        self._faixa_rendimentos = faixa_rendimentos
 
     @property
-    def outros_bens_valor(self):
-        """Gets the outros_bens_valor of this DadosPatrimonial.  # noqa: E501
+    def valor_outros_bens(self):
+        """Gets the valor_outros_bens of this DadosPatrimonial.  # noqa: E501
 
-        Valor em R$ de outros bens do usuário  # noqa: E501
+        Valor total em R$ incluindo móveis, imóveis e outros bens do usuário  # noqa: E501
 
-        :return: The outros_bens_valor of this DadosPatrimonial.  # noqa: E501
+        :return: The valor_outros_bens of this DadosPatrimonial.  # noqa: E501
         :rtype: float
         """
-        return self._outros_bens_valor
+        return self._valor_outros_bens
 
-    @outros_bens_valor.setter
-    def outros_bens_valor(self, outros_bens_valor):
-        """Sets the outros_bens_valor of this DadosPatrimonial.
+    @valor_outros_bens.setter
+    def valor_outros_bens(self, valor_outros_bens):
+        """Sets the valor_outros_bens of this DadosPatrimonial.
 
-        Valor em R$ de outros bens do usuário  # noqa: E501
+        Valor total em R$ incluindo móveis, imóveis e outros bens do usuário  # noqa: E501
 
-        :param outros_bens_valor: The outros_bens_valor of this DadosPatrimonial.  # noqa: E501
+        :param valor_outros_bens: The valor_outros_bens of this DadosPatrimonial.  # noqa: E501
         :type: float
         """
-        if outros_bens_valor is not None and outros_bens_valor > 999999999999.99:  # noqa: E501
-            raise ValueError("Invalid value for `outros_bens_valor`, must be a value less than or equal to `999999999999.99`")  # noqa: E501
-        if outros_bens_valor is not None and outros_bens_valor < 0.1:  # noqa: E501
-            raise ValueError("Invalid value for `outros_bens_valor`, must be a value greater than or equal to `0.1`")  # noqa: E501
+        if valor_outros_bens is not None and valor_outros_bens > 999999999999.99:  # noqa: E501
+            raise ValueError("Invalid value for `valor_outros_bens`, must be a value less than or equal to `999999999999.99`")  # noqa: E501
+        if valor_outros_bens is not None and valor_outros_bens < 0.1:  # noqa: E501
+            raise ValueError("Invalid value for `valor_outros_bens`, must be a value greater than or equal to `0.1`")  # noqa: E501
 
-        self._outros_bens_valor = outros_bens_valor
+        self._valor_outros_bens = valor_outros_bens
 
     def to_dict(self):
         """Returns the model properties as a dict"""

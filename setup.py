@@ -13,7 +13,7 @@
 
 from setuptools import setup, find_packages  # noqa: H301
 
-NAME = "cadastro_orama"
+NAME = "OramaCadastroSwift"
 VERSION = "1.0.0"
 # To install the library, run the following
 #
@@ -32,7 +32,7 @@ setup(
     url="",
     keywords=["OpenAPI", "OpenAPI-Generator", "Criação de Contas"],
     install_requires=REQUIRES,
-    packages=find_packages(),
+    packages=find_packages(exclude=["test", "tests"]),
     include_package_data=True,
     long_description="""\
     API de Criação de Contas.  # noqa: E501

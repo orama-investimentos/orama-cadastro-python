@@ -68,6 +68,9 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         self.api_key_prefix = api_key_prefix
         """dict to store API prefix (e.g. Bearer)
         """
+        self.refresh_api_key_hook = None
+        """function hook to refresh API key if expired
+        """
         self.username = username
         """Username for HTTP basic authentication
         """
@@ -228,6 +231,8 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         :param identifier: The identifier of apiKey.
         :return: The token for api key authentication.
         """
+        if self.refresh_api_key_hook is not None:
+            self.refresh_api_key_hook(self)
         key = self.api_key.get(identifier)
         if key:
             prefix = self.api_key_prefix.get(identifier)
@@ -251,14 +256,6 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         :return: The Auth Settings information dict.
         """
         return {
-            'Api-Key':
-                {
-                    'type': 'bearer',
-                    'in': 'header',
-                    'format': 'Api-Key',
-                    'key': 'Authorization',
-                    'value': 'Bearer ' + self.access_token
-                },
             'JWT':
                 {
                     'type': 'bearer',

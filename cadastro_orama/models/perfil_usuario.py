@@ -111,18 +111,15 @@ class PerfilUsuario(object):
             self.estado_civil = estado_civil
         if nome_conjuge is not None:
             self.nome_conjuge = nome_conjuge
-        if nome_mae is not None:
-            self.nome_mae = nome_mae
+        self.nome_mae = nome_mae
         if nome_pai is not None:
             self.nome_pai = nome_pai
         if login is not None:
             self.login = login
-        if documento is not None:
-            self.documento = documento
+        self.documento = documento
         if profissao is not None:
             self.profissao = profissao
-        if endereco is not None:
-            self.endereco = endereco
+        self.endereco = endereco
         if patrimonio is not None:
             self.patrimonio = patrimonio
         if conta_bancaria is not None:
@@ -377,6 +374,8 @@ class PerfilUsuario(object):
         :param nome_mae: The nome_mae of this PerfilUsuario.  # noqa: E501
         :type: str
         """
+        if nome_mae is None:
+            raise ValueError("Invalid value for `nome_mae`, must not be `None`")  # noqa: E501
         if nome_mae is not None and len(nome_mae) > 200:
             raise ValueError("Invalid value for `nome_mae`, length must be less than or equal to `200`")  # noqa: E501
 
@@ -386,7 +385,7 @@ class PerfilUsuario(object):
     def nome_pai(self):
         """Gets the nome_pai of this PerfilUsuario.  # noqa: E501
 
-        Nome do pai do usuário  # noqa: E501
+        Nome do pai do usuário. O nome deve ser string vazia ou null caso o pai seja desconhecido.  # noqa: E501
 
         :return: The nome_pai of this PerfilUsuario.  # noqa: E501
         :rtype: str
@@ -397,7 +396,7 @@ class PerfilUsuario(object):
     def nome_pai(self, nome_pai):
         """Sets the nome_pai of this PerfilUsuario.
 
-        Nome do pai do usuário  # noqa: E501
+        Nome do pai do usuário. O nome deve ser string vazia ou null caso o pai seja desconhecido.  # noqa: E501
 
         :param nome_pai: The nome_pai of this PerfilUsuario.  # noqa: E501
         :type: str
@@ -446,6 +445,8 @@ class PerfilUsuario(object):
         :param documento: The documento of this PerfilUsuario.  # noqa: E501
         :type: list[Documento]
         """
+        if documento is None:
+            raise ValueError("Invalid value for `documento`, must not be `None`")  # noqa: E501
 
         self._documento = documento
 
@@ -488,6 +489,8 @@ class PerfilUsuario(object):
         :param endereco: The endereco of this PerfilUsuario.  # noqa: E501
         :type: Endereco
         """
+        if endereco is None:
+            raise ValueError("Invalid value for `endereco`, must not be `None`")  # noqa: E501
 
         self._endereco = endereco
 

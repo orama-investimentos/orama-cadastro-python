@@ -1384,7 +1384,7 @@ class UsersApi(object):
     def account_perfil_post(self, cpf, **kwargs):  # noqa: E501
         """Submete o perfil de usuário associado a um login para ser criado como cliente.  # noqa: E501
 
-        Submete o perfil de usuário associado a um login para ser criado como cliente. Após submissão deste POST, o perfil não poderá mais ser alterado. Para alterar ou inserir informações no perfil antes de submeter o perfil o método PUT deve ser utilizado.  # noqa: E501
+        Submete o perfil de usuário associado a um login para ser criado como cliente. É necessário validar ambos o número do celular e o e-mail para que a submissão seja aceita, veja os endpoints /perfil/{cpf}/celular/autenticacao/ e /perfil/{cpf}/email/autenticacao/. Após submissão deste POST, o perfil não poderá mais ser alterado. Para alterar ou inserir informações no perfil antes de submeter o perfil o método PUT deve ser utilizado.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.account_perfil_post(cpf, async_req=True)
@@ -1409,7 +1409,7 @@ class UsersApi(object):
     def account_perfil_post_with_http_info(self, cpf, **kwargs):  # noqa: E501
         """Submete o perfil de usuário associado a um login para ser criado como cliente.  # noqa: E501
 
-        Submete o perfil de usuário associado a um login para ser criado como cliente. Após submissão deste POST, o perfil não poderá mais ser alterado. Para alterar ou inserir informações no perfil antes de submeter o perfil o método PUT deve ser utilizado.  # noqa: E501
+        Submete o perfil de usuário associado a um login para ser criado como cliente. É necessário validar ambos o número do celular e o e-mail para que a submissão seja aceita, veja os endpoints /perfil/{cpf}/celular/autenticacao/ e /perfil/{cpf}/email/autenticacao/. Após submissão deste POST, o perfil não poderá mais ser alterado. Para alterar ou inserir informações no perfil antes de submeter o perfil o método PUT deve ser utilizado.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.account_perfil_post_with_http_info(cpf, async_req=True)

@@ -33,47 +33,56 @@ class ContaBancaria(object):
     """
     openapi_types = {
         'banco': 'str',
+        'tipo': 'str',
         'agencia': 'str',
         'conta': 'str',
         'digito': 'str',
-        'cotitular_conjuge': 'bool',
-        'cpf_conjuge': 'str'
+        'conta_conjunta': 'bool',
+        'segundo_participante_titular': 'bool',
+        'cpf_cotitular': 'str'
     }
 
     attribute_map = {
         'banco': 'banco',
+        'tipo': 'tipo',
         'agencia': 'agencia',
         'conta': 'conta',
         'digito': 'digito',
-        'cotitular_conjuge': 'cotitularConjuge',
-        'cpf_conjuge': 'cpfConjuge'
+        'conta_conjunta': 'contaConjunta',
+        'segundo_participante_titular': 'segundoParticipanteTitular',
+        'cpf_cotitular': 'cpfCotitular'
     }
 
-    def __init__(self, banco=None, agencia=None, conta=None, digito=None, cotitular_conjuge=None, cpf_conjuge=None):  # noqa: E501
+    def __init__(self, banco=None, tipo='CC', agencia=None, conta=None, digito=None, conta_conjunta=False, segundo_participante_titular=False, cpf_cotitular=None):  # noqa: E501
         """ContaBancaria - a model defined in OpenAPI"""  # noqa: E501
 
         self._banco = None
+        self._tipo = None
         self._agencia = None
         self._conta = None
         self._digito = None
-        self._cotitular_conjuge = None
-        self._cpf_conjuge = None
+        self._conta_conjunta = None
+        self._segundo_participante_titular = None
+        self._cpf_cotitular = None
         self.discriminator = None
 
         self.banco = banco
+        self.tipo = tipo
         self.agencia = agencia
         self.conta = conta
         self.digito = digito
-        if cotitular_conjuge is not None:
-            self.cotitular_conjuge = cotitular_conjuge
-        if cpf_conjuge is not None:
-            self.cpf_conjuge = cpf_conjuge
+        if conta_conjunta is not None:
+            self.conta_conjunta = conta_conjunta
+        if segundo_participante_titular is not None:
+            self.segundo_participante_titular = segundo_participante_titular
+        if cpf_cotitular is not None:
+            self.cpf_cotitular = cpf_cotitular
 
     @property
     def banco(self):
         """Gets the banco of this ContaBancaria.  # noqa: E501
 
-        Banco da conta, string com o numero do banco  # noqa: E501
+        Banco da conta, string com o número do banco  # noqa: E501
 
         :return: The banco of this ContaBancaria.  # noqa: E501
         :rtype: str
@@ -84,7 +93,7 @@ class ContaBancaria(object):
     def banco(self, banco):
         """Sets the banco of this ContaBancaria.
 
-        Banco da conta, string com o numero do banco  # noqa: E501
+        Banco da conta, string com o número do banco  # noqa: E501
 
         :param banco: The banco of this ContaBancaria.  # noqa: E501
         :type: str
@@ -95,10 +104,41 @@ class ContaBancaria(object):
         self._banco = banco
 
     @property
+    def tipo(self):
+        """Gets the tipo of this ContaBancaria.  # noqa: E501
+
+        Tipo da conta bancária. O tipo deve ser conta corrente (CC) ou conta poupança (CP).  # noqa: E501
+
+        :return: The tipo of this ContaBancaria.  # noqa: E501
+        :rtype: str
+        """
+        return self._tipo
+
+    @tipo.setter
+    def tipo(self, tipo):
+        """Sets the tipo of this ContaBancaria.
+
+        Tipo da conta bancária. O tipo deve ser conta corrente (CC) ou conta poupança (CP).  # noqa: E501
+
+        :param tipo: The tipo of this ContaBancaria.  # noqa: E501
+        :type: str
+        """
+        if tipo is None:
+            raise ValueError("Invalid value for `tipo`, must not be `None`")  # noqa: E501
+        allowed_values = ["CC", "CP"]  # noqa: E501
+        if tipo not in allowed_values:
+            raise ValueError(
+                "Invalid value for `tipo` ({0}), must be one of {1}"  # noqa: E501
+                .format(tipo, allowed_values)
+            )
+
+        self._tipo = tipo
+
+    @property
     def agencia(self):
         """Gets the agencia of this ContaBancaria.  # noqa: E501
 
-        Agencia bancaria da conta corrente  # noqa: E501
+        Agência da conta bancária  # noqa: E501
 
         :return: The agencia of this ContaBancaria.  # noqa: E501
         :rtype: str
@@ -109,7 +149,7 @@ class ContaBancaria(object):
     def agencia(self, agencia):
         """Sets the agencia of this ContaBancaria.
 
-        Agencia bancaria da conta corrente  # noqa: E501
+        Agência da conta bancária  # noqa: E501
 
         :param agencia: The agencia of this ContaBancaria.  # noqa: E501
         :type: str
@@ -125,7 +165,7 @@ class ContaBancaria(object):
     def conta(self):
         """Gets the conta of this ContaBancaria.  # noqa: E501
 
-        Número da conta corrente sem o dígito verificador  # noqa: E501
+        Número da conta bancária sem o dígito verificador  # noqa: E501
 
         :return: The conta of this ContaBancaria.  # noqa: E501
         :rtype: str
@@ -136,7 +176,7 @@ class ContaBancaria(object):
     def conta(self, conta):
         """Sets the conta of this ContaBancaria.
 
-        Número da conta corrente sem o dígito verificador  # noqa: E501
+        Número da conta bancária sem o dígito verificador  # noqa: E501
 
         :param conta: The conta of this ContaBancaria.  # noqa: E501
         :type: str
@@ -152,7 +192,7 @@ class ContaBancaria(object):
     def digito(self):
         """Gets the digito of this ContaBancaria.  # noqa: E501
 
-        Digito verificador da conta corrente  # noqa: E501
+        Digito verificador da conta bancária  # noqa: E501
 
         :return: The digito of this ContaBancaria.  # noqa: E501
         :rtype: str
@@ -163,7 +203,7 @@ class ContaBancaria(object):
     def digito(self, digito):
         """Sets the digito of this ContaBancaria.
 
-        Digito verificador da conta corrente  # noqa: E501
+        Digito verificador da conta bancária  # noqa: E501
 
         :param digito: The digito of this ContaBancaria.  # noqa: E501
         :type: str
@@ -176,52 +216,75 @@ class ContaBancaria(object):
         self._digito = digito
 
     @property
-    def cotitular_conjuge(self):
-        """Gets the cotitular_conjuge of this ContaBancaria.  # noqa: E501
+    def conta_conjunta(self):
+        """Gets the conta_conjunta of this ContaBancaria.  # noqa: E501
 
-        Informação se o conjuge é co-titular da conta corrente. Necessário caso seja especificado o cpfConjuge  # noqa: E501
+        Informação que define se é uma conta conjunta. Caso seja, deve ser definido como true.  # noqa: E501
 
-        :return: The cotitular_conjuge of this ContaBancaria.  # noqa: E501
+        :return: The conta_conjunta of this ContaBancaria.  # noqa: E501
         :rtype: bool
         """
-        return self._cotitular_conjuge
+        return self._conta_conjunta
 
-    @cotitular_conjuge.setter
-    def cotitular_conjuge(self, cotitular_conjuge):
-        """Sets the cotitular_conjuge of this ContaBancaria.
+    @conta_conjunta.setter
+    def conta_conjunta(self, conta_conjunta):
+        """Sets the conta_conjunta of this ContaBancaria.
 
-        Informação se o conjuge é co-titular da conta corrente. Necessário caso seja especificado o cpfConjuge  # noqa: E501
+        Informação que define se é uma conta conjunta. Caso seja, deve ser definido como true.  # noqa: E501
 
-        :param cotitular_conjuge: The cotitular_conjuge of this ContaBancaria.  # noqa: E501
+        :param conta_conjunta: The conta_conjunta of this ContaBancaria.  # noqa: E501
         :type: bool
         """
 
-        self._cotitular_conjuge = cotitular_conjuge
+        self._conta_conjunta = conta_conjunta
 
     @property
-    def cpf_conjuge(self):
-        """Gets the cpf_conjuge of this ContaBancaria.  # noqa: E501
+    def segundo_participante_titular(self):
+        """Gets the segundo_participante_titular of this ContaBancaria.  # noqa: E501
 
-        CPF do conjuge caso seja conta conjunta. CPF deve ser válido. O CPF tem que ter os 11 dígitos com a máscara incluindo os pontos e hífen.  # noqa: E501
+        Informação se o segundo participante (co-titular) é o titular da conta, caso não seja, o primeiro participante quem esta preenchendo a conta é o titular.  # noqa: E501
 
-        :return: The cpf_conjuge of this ContaBancaria.  # noqa: E501
+        :return: The segundo_participante_titular of this ContaBancaria.  # noqa: E501
+        :rtype: bool
+        """
+        return self._segundo_participante_titular
+
+    @segundo_participante_titular.setter
+    def segundo_participante_titular(self, segundo_participante_titular):
+        """Sets the segundo_participante_titular of this ContaBancaria.
+
+        Informação se o segundo participante (co-titular) é o titular da conta, caso não seja, o primeiro participante quem esta preenchendo a conta é o titular.  # noqa: E501
+
+        :param segundo_participante_titular: The segundo_participante_titular of this ContaBancaria.  # noqa: E501
+        :type: bool
+        """
+
+        self._segundo_participante_titular = segundo_participante_titular
+
+    @property
+    def cpf_cotitular(self):
+        """Gets the cpf_cotitular of this ContaBancaria.  # noqa: E501
+
+        CPF do co-titular caso seja conta conjunta. CPF deve ser válido. O CPF tem que ter os 11 dígitos com a máscara incluindo os pontos e hífen.  # noqa: E501
+
+        :return: The cpf_cotitular of this ContaBancaria.  # noqa: E501
         :rtype: str
         """
-        return self._cpf_conjuge
+        return self._cpf_cotitular
 
-    @cpf_conjuge.setter
-    def cpf_conjuge(self, cpf_conjuge):
-        """Sets the cpf_conjuge of this ContaBancaria.
+    @cpf_cotitular.setter
+    def cpf_cotitular(self, cpf_cotitular):
+        """Sets the cpf_cotitular of this ContaBancaria.
 
-        CPF do conjuge caso seja conta conjunta. CPF deve ser válido. O CPF tem que ter os 11 dígitos com a máscara incluindo os pontos e hífen.  # noqa: E501
+        CPF do co-titular caso seja conta conjunta. CPF deve ser válido. O CPF tem que ter os 11 dígitos com a máscara incluindo os pontos e hífen.  # noqa: E501
 
-        :param cpf_conjuge: The cpf_conjuge of this ContaBancaria.  # noqa: E501
+        :param cpf_cotitular: The cpf_cotitular of this ContaBancaria.  # noqa: E501
         :type: str
         """
-        if cpf_conjuge is not None and not re.search(r'^\d{3}\.\d{3}\.\d{3}-\d{2}$', cpf_conjuge):  # noqa: E501
-            raise ValueError(r"Invalid value for `cpf_conjuge`, must be a follow pattern or equal to `/^\d{3}\.\d{3}\.\d{3}-\d{2}$/`")  # noqa: E501
+        if cpf_cotitular is not None and not re.search(r'^\d{3}\.\d{3}\.\d{3}-\d{2}$', cpf_cotitular):  # noqa: E501
+            raise ValueError(r"Invalid value for `cpf_cotitular`, must be a follow pattern or equal to `/^\d{3}\.\d{3}\.\d{3}-\d{2}$/`")  # noqa: E501
 
-        self._cpf_conjuge = cpf_conjuge
+        self._cpf_cotitular = cpf_cotitular
 
     def to_dict(self):
         """Returns the model properties as a dict"""

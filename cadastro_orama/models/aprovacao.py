@@ -32,14 +32,14 @@ class Aprovacao(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'aprovado': 'bool'
+        'aprovado': 'str'
     }
 
     attribute_map = {
         'aprovado': 'aprovado'
     }
 
-    def __init__(self, aprovado=None):  # noqa: E501
+    def __init__(self, aprovado='INDEFINIDO'):  # noqa: E501
         """Aprovacao - a model defined in OpenAPI"""  # noqa: E501
 
         self._aprovado = None
@@ -52,10 +52,10 @@ class Aprovacao(object):
     def aprovado(self):
         """Gets the aprovado of this Aprovacao.  # noqa: E501
 
-        Estado de aprovação do perfil, true caso já tenha sido aprovado, false caso contrário.  # noqa: E501
+        Estado de aprovação do perfil.  # noqa: E501
 
         :return: The aprovado of this Aprovacao.  # noqa: E501
-        :rtype: bool
+        :rtype: str
         """
         return self._aprovado
 
@@ -63,11 +63,17 @@ class Aprovacao(object):
     def aprovado(self, aprovado):
         """Sets the aprovado of this Aprovacao.
 
-        Estado de aprovação do perfil, true caso já tenha sido aprovado, false caso contrário.  # noqa: E501
+        Estado de aprovação do perfil.  # noqa: E501
 
         :param aprovado: The aprovado of this Aprovacao.  # noqa: E501
-        :type: bool
+        :type: str
         """
+        allowed_values = ["APROVADO", "PENDENTE", "EM ANÁLISE", "INDEFINIDO"]  # noqa: E501
+        if aprovado not in allowed_values:
+            raise ValueError(
+                "Invalid value for `aprovado` ({0}), must be one of {1}"  # noqa: E501
+                .format(aprovado, allowed_values)
+            )
 
         self._aprovado = aprovado
 
