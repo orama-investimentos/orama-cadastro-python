@@ -1,5 +1,6 @@
 # DadosProfissionais
 
+Dados profissionais do usuário
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

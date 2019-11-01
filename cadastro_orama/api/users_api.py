@@ -104,8 +104,8 @@ class UsersApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'usuario_senha_objeto' is set
-        if ('usuario_senha_objeto' not in local_var_params or
-                local_var_params['usuario_senha_objeto'] is None):
+        if self.api_client.client_side_validation and ('usuario_senha_objeto' not in local_var_params or  # noqa: E501
+                                                        local_var_params['usuario_senha_objeto'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `usuario_senha_objeto` when calling `account_autenticacao_post`")  # noqa: E501
 
         collection_formats = {}
@@ -218,12 +218,12 @@ class UsersApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'cpf' is set
-        if ('cpf' not in local_var_params or
-                local_var_params['cpf'] is None):
+        if self.api_client.client_side_validation and ('cpf' not in local_var_params or  # noqa: E501
+                                                        local_var_params['cpf'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `cpf` when calling `account_documento_confirmacao_get`")  # noqa: E501
         # verify the required parameter 'tipo_documento' is set
-        if ('tipo_documento' not in local_var_params or
-                local_var_params['tipo_documento'] is None):
+        if self.api_client.client_side_validation and ('tipo_documento' not in local_var_params or  # noqa: E501
+                                                        local_var_params['tipo_documento'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `tipo_documento` when calling `account_documento_confirmacao_get`")  # noqa: E501
 
         collection_formats = {}
@@ -233,7 +233,7 @@ class UsersApi(object):
             path_params['cpf'] = local_var_params['cpf']  # noqa: E501
 
         query_params = []
-        if 'tipo_documento' in local_var_params:
+        if 'tipo_documento' in local_var_params and local_var_params['tipo_documento'] is not None:  # noqa: E501
             query_params.append(('tipoDocumento', local_var_params['tipo_documento']))  # noqa: E501
 
         header_params = {}
@@ -265,19 +265,18 @@ class UsersApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def account_documento_put(self, cpf, tipo_documento, name, filename, **kwargs):  # noqa: E501
+    def account_documento_put(self, cpf, tipo_documento, filename, **kwargs):  # noqa: E501
         """Anexa ou atualiza documento para conferencia de autenticidade do perfil.  # noqa: E501
 
         Anexa ou atualiza documento que será usado no processo conferencia de autenticidade do perfil. É recomendado fazer o upload de documentos para comprovação de identidade. Caso o perfil tiver conta bancária conjunta ou a conta seja do banco Itaú é recomendado o upload do documento 'Comprovante Bancário'.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.account_documento_put(cpf, tipo_documento, name, filename, async_req=True)
+        >>> thread = api.account_documento_put(cpf, tipo_documento, filename, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str cpf: CPF do perfil (required)
         :param str tipo_documento: Tipo do documento (required)
-        :param str name: Nome do atributo codificado em form-data 'image' (required)
         :param file filename: Arquivo binário que será enviado. O formato deve ser PDF, PNG ou JPG (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -291,21 +290,20 @@ class UsersApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.account_documento_put_with_http_info(cpf, tipo_documento, name, filename, **kwargs)  # noqa: E501
+        return self.account_documento_put_with_http_info(cpf, tipo_documento, filename, **kwargs)  # noqa: E501
 
-    def account_documento_put_with_http_info(self, cpf, tipo_documento, name, filename, **kwargs):  # noqa: E501
+    def account_documento_put_with_http_info(self, cpf, tipo_documento, filename, **kwargs):  # noqa: E501
         """Anexa ou atualiza documento para conferencia de autenticidade do perfil.  # noqa: E501
 
         Anexa ou atualiza documento que será usado no processo conferencia de autenticidade do perfil. É recomendado fazer o upload de documentos para comprovação de identidade. Caso o perfil tiver conta bancária conjunta ou a conta seja do banco Itaú é recomendado o upload do documento 'Comprovante Bancário'.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.account_documento_put_with_http_info(cpf, tipo_documento, name, filename, async_req=True)
+        >>> thread = api.account_documento_put_with_http_info(cpf, tipo_documento, filename, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str cpf: CPF do perfil (required)
         :param str tipo_documento: Tipo do documento (required)
-        :param str name: Nome do atributo codificado em form-data 'image' (required)
         :param file filename: Arquivo binário que será enviado. O formato deve ser PDF, PNG ou JPG (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -323,7 +321,7 @@ class UsersApi(object):
 
         local_var_params = locals()
 
-        all_params = ['cpf', 'tipo_documento', 'name', 'filename']  # noqa: E501
+        all_params = ['cpf', 'tipo_documento', 'filename']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -338,20 +336,16 @@ class UsersApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'cpf' is set
-        if ('cpf' not in local_var_params or
-                local_var_params['cpf'] is None):
+        if self.api_client.client_side_validation and ('cpf' not in local_var_params or  # noqa: E501
+                                                        local_var_params['cpf'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `cpf` when calling `account_documento_put`")  # noqa: E501
         # verify the required parameter 'tipo_documento' is set
-        if ('tipo_documento' not in local_var_params or
-                local_var_params['tipo_documento'] is None):
+        if self.api_client.client_side_validation and ('tipo_documento' not in local_var_params or  # noqa: E501
+                                                        local_var_params['tipo_documento'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `tipo_documento` when calling `account_documento_put`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if ('name' not in local_var_params or
-                local_var_params['name'] is None):
-            raise ApiValueError("Missing the required parameter `name` when calling `account_documento_put`")  # noqa: E501
         # verify the required parameter 'filename' is set
-        if ('filename' not in local_var_params or
-                local_var_params['filename'] is None):
+        if self.api_client.client_side_validation and ('filename' not in local_var_params or  # noqa: E501
+                                                        local_var_params['filename'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `filename` when calling `account_documento_put`")  # noqa: E501
 
         collection_formats = {}
@@ -361,15 +355,13 @@ class UsersApi(object):
             path_params['cpf'] = local_var_params['cpf']  # noqa: E501
 
         query_params = []
-        if 'tipo_documento' in local_var_params:
+        if 'tipo_documento' in local_var_params and local_var_params['tipo_documento'] is not None:  # noqa: E501
             query_params.append(('tipoDocumento', local_var_params['tipo_documento']))  # noqa: E501
 
         header_params = {}
 
         form_params = []
         local_var_files = {}
-        if 'name' in local_var_params:
-            form_params.append(('name', local_var_params['name']))  # noqa: E501
         if 'filename' in local_var_params:
             local_var_files['filename'] = local_var_params['filename']  # noqa: E501
 
@@ -468,8 +460,8 @@ class UsersApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'login_senha_objeto' is set
-        if ('login_senha_objeto' not in local_var_params or
-                local_var_params['login_senha_objeto'] is None):
+        if self.api_client.client_side_validation and ('login_senha_objeto' not in local_var_params or  # noqa: E501
+                                                        local_var_params['login_senha_objeto'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `login_senha_objeto` when calling `account_identificacao_post`")  # noqa: E501
 
         collection_formats = {}
@@ -578,8 +570,8 @@ class UsersApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'cpf' is set
-        if ('cpf' not in local_var_params or
-                local_var_params['cpf'] is None):
+        if self.api_client.client_side_validation and ('cpf' not in local_var_params or  # noqa: E501
+                                                        local_var_params['cpf'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `cpf` when calling `account_perfil_aprovacao_get`")  # noqa: E501
 
         collection_formats = {}
@@ -684,8 +676,8 @@ class UsersApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'cpf' is set
-        if ('cpf' not in local_var_params or
-                local_var_params['cpf'] is None):
+        if self.api_client.client_side_validation and ('cpf' not in local_var_params or  # noqa: E501
+                                                        local_var_params['cpf'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `cpf` when calling `account_perfil_celular_autenticacao_confirmacao_get`")  # noqa: E501
 
         collection_formats = {}
@@ -790,8 +782,8 @@ class UsersApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'cpf' is set
-        if ('cpf' not in local_var_params or
-                local_var_params['cpf'] is None):
+        if self.api_client.client_side_validation and ('cpf' not in local_var_params or  # noqa: E501
+                                                        local_var_params['cpf'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `cpf` when calling `account_perfil_celular_autenticacao_post`")  # noqa: E501
 
         collection_formats = {}
@@ -898,12 +890,12 @@ class UsersApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'cpf' is set
-        if ('cpf' not in local_var_params or
-                local_var_params['cpf'] is None):
+        if self.api_client.client_side_validation and ('cpf' not in local_var_params or  # noqa: E501
+                                                        local_var_params['cpf'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `cpf` when calling `account_perfil_celular_confirmacao_post`")  # noqa: E501
         # verify the required parameter 'codigo' is set
-        if ('codigo' not in local_var_params or
-                local_var_params['codigo'] is None):
+        if self.api_client.client_side_validation and ('codigo' not in local_var_params or  # noqa: E501
+                                                        local_var_params['codigo'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `codigo` when calling `account_perfil_celular_confirmacao_post`")  # noqa: E501
 
         collection_formats = {}
@@ -913,7 +905,7 @@ class UsersApi(object):
             path_params['cpf'] = local_var_params['cpf']  # noqa: E501
 
         query_params = []
-        if 'codigo' in local_var_params:
+        if 'codigo' in local_var_params and local_var_params['codigo'] is not None:  # noqa: E501
             query_params.append(('codigo', local_var_params['codigo']))  # noqa: E501
 
         header_params = {}
@@ -1010,8 +1002,8 @@ class UsersApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'cpf' is set
-        if ('cpf' not in local_var_params or
-                local_var_params['cpf'] is None):
+        if self.api_client.client_side_validation and ('cpf' not in local_var_params or  # noqa: E501
+                                                        local_var_params['cpf'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `cpf` when calling `account_perfil_email_autenticacao_confirmacao_get`")  # noqa: E501
 
         collection_formats = {}
@@ -1116,8 +1108,8 @@ class UsersApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'cpf' is set
-        if ('cpf' not in local_var_params or
-                local_var_params['cpf'] is None):
+        if self.api_client.client_side_validation and ('cpf' not in local_var_params or  # noqa: E501
+                                                        local_var_params['cpf'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `cpf` when calling `account_perfil_email_autenticacao_post`")  # noqa: E501
 
         collection_formats = {}
@@ -1224,12 +1216,12 @@ class UsersApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'cpf' is set
-        if ('cpf' not in local_var_params or
-                local_var_params['cpf'] is None):
+        if self.api_client.client_side_validation and ('cpf' not in local_var_params or  # noqa: E501
+                                                        local_var_params['cpf'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `cpf` when calling `account_perfil_email_confirmacao_post`")  # noqa: E501
         # verify the required parameter 'codigo' is set
-        if ('codigo' not in local_var_params or
-                local_var_params['codigo'] is None):
+        if self.api_client.client_side_validation and ('codigo' not in local_var_params or  # noqa: E501
+                                                        local_var_params['codigo'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `codigo` when calling `account_perfil_email_confirmacao_post`")  # noqa: E501
 
         collection_formats = {}
@@ -1239,7 +1231,7 @@ class UsersApi(object):
             path_params['cpf'] = local_var_params['cpf']  # noqa: E501
 
         query_params = []
-        if 'codigo' in local_var_params:
+        if 'codigo' in local_var_params and local_var_params['codigo'] is not None:  # noqa: E501
             query_params.append(('codigo', local_var_params['codigo']))  # noqa: E501
 
         header_params = {}
@@ -1338,8 +1330,8 @@ class UsersApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'cpf' is set
-        if ('cpf' not in local_var_params or
-                local_var_params['cpf'] is None):
+        if self.api_client.client_side_validation and ('cpf' not in local_var_params or  # noqa: E501
+                                                        local_var_params['cpf'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `cpf` when calling `account_perfil_get`")  # noqa: E501
 
         collection_formats = {}
@@ -1349,7 +1341,7 @@ class UsersApi(object):
             path_params['cpf'] = local_var_params['cpf']  # noqa: E501
 
         query_params = []
-        if 'campos' in local_var_params:
+        if 'campos' in local_var_params and local_var_params['campos'] is not None:  # noqa: E501
             query_params.append(('campos', local_var_params['campos']))  # noqa: E501
 
         header_params = {}
@@ -1448,8 +1440,8 @@ class UsersApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'cpf' is set
-        if ('cpf' not in local_var_params or
-                local_var_params['cpf'] is None):
+        if self.api_client.client_side_validation and ('cpf' not in local_var_params or  # noqa: E501
+                                                        local_var_params['cpf'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `cpf` when calling `account_perfil_post`")  # noqa: E501
 
         collection_formats = {}
@@ -1558,12 +1550,12 @@ class UsersApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'cpf' is set
-        if ('cpf' not in local_var_params or
-                local_var_params['cpf'] is None):
+        if self.api_client.client_side_validation and ('cpf' not in local_var_params or  # noqa: E501
+                                                        local_var_params['cpf'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `cpf` when calling `account_perfil_put`")  # noqa: E501
         # verify the required parameter 'perfil_usuario' is set
-        if ('perfil_usuario' not in local_var_params or
-                local_var_params['perfil_usuario'] is None):
+        if self.api_client.client_side_validation and ('perfil_usuario' not in local_var_params or  # noqa: E501
+                                                        local_var_params['perfil_usuario'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `perfil_usuario` when calling `account_perfil_put`")  # noqa: E501
 
         collection_formats = {}
@@ -1674,8 +1666,8 @@ class UsersApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'cpf' is set
-        if ('cpf' not in local_var_params or
-                local_var_params['cpf'] is None):
+        if self.api_client.client_side_validation and ('cpf' not in local_var_params or  # noqa: E501
+                                                        local_var_params['cpf'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `cpf` when calling `account_perfil_submetido_get`")  # noqa: E501
 
         collection_formats = {}

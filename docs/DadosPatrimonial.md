@@ -1,5 +1,6 @@
 # DadosPatrimonial
 
+Informação sobre o Patrimônio do usuário
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,5 +1,6 @@
 # ContaBancaria
 
+Modelo de Conta bancária no sistema bancário brasileiro. Deve ser enviado somente uma conta bancária na lista de 'contaBancaria'.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

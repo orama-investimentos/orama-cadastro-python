@@ -40,6 +40,7 @@ from cadastro_orama.models.documento import Documento
 from cadastro_orama.models.documento_corpo import DocumentoCorpo
 from cadastro_orama.models.endereco import Endereco
 from cadastro_orama.models.erro import Erro
+from cadastro_orama.models.front_end_step import FrontEndStep
 from cadastro_orama.models.lista_perfil_usuario import ListaPerfilUsuario
 from cadastro_orama.models.login_criado import LoginCriado
 from cadastro_orama.models.login_objeto import LoginObjeto

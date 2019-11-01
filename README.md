@@ -14,7 +14,7 @@ Python 2.7 and 3.4+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on Github, you can install directly from Github
+If the python package is hosted on a repository, you can install directly using:
 
 ```sh
 pip install git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git
@@ -106,6 +106,7 @@ Class | Method | HTTP request | Description
  - [DocumentoCorpo](docs/DocumentoCorpo.md)
  - [Endereco](docs/Endereco.md)
  - [Erro](docs/Erro.md)
+ - [FrontEndStep](docs/FrontEndStep.md)
  - [ListaPerfilUsuario](docs/ListaPerfilUsuario.md)
  - [LoginCriado](docs/LoginCriado.md)
  - [LoginObjeto](docs/LoginObjeto.md)

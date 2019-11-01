@@ -153,7 +153,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **account_documento_put**
-> account_documento_put(cpf, tipo_documento, name, filename)
+> account_documento_put(cpf, tipo_documento, filename)
 
 Anexa ou atualiza documento para conferencia de autenticidade do perfil.
 
@@ -178,12 +178,11 @@ configuration.host = "https://cadastro.orama.com.br/api/contas/v1.0"
 api_instance = cadastro_orama.UsersApi(cadastro_orama.ApiClient(configuration))
 cpf = 'cpf_example' # str | CPF do perfil
 tipo_documento = 'Passaporte' # str | Tipo do documento
-name = 'name_example' # str | Nome do atributo codificado em form-data 'image'
 filename = '/path/to/file' # file | Arquivo binário que será enviado. O formato deve ser PDF, PNG ou JPG
 
 try:
     # Anexa ou atualiza documento para conferencia de autenticidade do perfil.
-    api_instance.account_documento_put(cpf, tipo_documento, name, filename)
+    api_instance.account_documento_put(cpf, tipo_documento, filename)
 except ApiException as e:
     print("Exception when calling UsersApi->account_documento_put: %s\n" % e)
 ```
@@ -194,7 +193,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cpf** | **str**| CPF do perfil | 
  **tipo_documento** | **str**| Tipo do documento | 
- **name** | **str**| Nome do atributo codificado em form-data &#39;image&#39; | 
  **filename** | **file**| Arquivo binário que será enviado. O formato deve ser PDF, PNG ou JPG | 
 
 ### Return type
