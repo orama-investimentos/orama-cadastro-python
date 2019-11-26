@@ -73,7 +73,7 @@ class Aprovacao(object):
         :param aprovado: The aprovado of this Aprovacao.  # noqa: E501
         :type: str
         """
-        allowed_values = ["APROVADO", "PENDENTE", "EM ANÁLISE", "INDEFINIDO"]  # noqa: E501
+        allowed_values = ["APROVADO", "PENDENTE", "EM ANÁLISE", "INDEFINIDO", "CRIADO", "ERRO"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and aprovado not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `aprovado` ({0}), must be one of {1}"  # noqa: E501

@@ -18,6 +18,7 @@ from __future__ import absolute_import
 __version__ = "1.0.0"
 
 # import apis into sdk package
+from cadastro_orama.api.developers_api import DevelopersApi
 from cadastro_orama.api.users_api import UsersApi
 
 # import ApiClient

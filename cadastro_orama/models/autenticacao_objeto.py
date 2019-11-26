@@ -34,23 +34,28 @@ class AutenticacaoObjeto(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'token': 'str'
+        'token': 'str',
+        'login': 'LoginObjeto'
     }
 
     attribute_map = {
-        'token': 'token'
+        'token': 'token',
+        'login': 'login'
     }
 
-    def __init__(self, token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, token=None, login=None, local_vars_configuration=None):  # noqa: E501
         """AutenticacaoObjeto - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._token = None
+        self._login = None
         self.discriminator = None
 
         self.token = token
+        if login is not None:
+            self.login = login
 
     @property
     def token(self):
@@ -74,6 +79,27 @@ class AutenticacaoObjeto(object):
             raise ValueError("Invalid value for `token`, must not be `None`")  # noqa: E501
 
         self._token = token
+
+    @property
+    def login(self):
+        """Gets the login of this AutenticacaoObjeto.  # noqa: E501
+
+
+        :return: The login of this AutenticacaoObjeto.  # noqa: E501
+        :rtype: LoginObjeto
+        """
+        return self._login
+
+    @login.setter
+    def login(self, login):
+        """Sets the login of this AutenticacaoObjeto.
+
+
+        :param login: The login of this AutenticacaoObjeto.  # noqa: E501
+        :type: LoginObjeto
+        """
+
+        self._login = login
 
     def to_dict(self):
         """Returns the model properties as a dict"""

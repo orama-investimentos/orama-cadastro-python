@@ -37,19 +37,17 @@ class DevelopersApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def perfil_get(self, **kwargs):  # noqa: E501
-        """Retorna uma lista composta por objetos do tipo perfil  # noqa: E501
+    def account_identificacao_parceiro_post(self, login_senha_objeto, **kwargs):  # noqa: E501
+        """Cria um login para usuário.  # noqa: E501
 
-        Returna uma lista composta por objetos do tipo perfil  # noqa: E501
+        Cria um novo login que será usado para acesso ao sistema.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.perfil_get(async_req=True)
+        >>> thread = api.account_identificacao_parceiro_post(login_senha_objeto, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param float limite: Número máximo de elementos
-        :param float deslocamento: Número de deslocamento (offset) dos elementos
-        :param str campos: Lista de campos para ser inclusivamente filtrados
+        :param LoginSenhaObjeto login_senha_objeto: Dados para criação do login (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -57,26 +55,24 @@ class DevelopersApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: ListaPerfilUsuario
+        :return: LoginCriado
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.perfil_get_with_http_info(**kwargs)  # noqa: E501
+        return self.account_identificacao_parceiro_post_with_http_info(login_senha_objeto, **kwargs)  # noqa: E501
 
-    def perfil_get_with_http_info(self, **kwargs):  # noqa: E501
-        """Retorna uma lista composta por objetos do tipo perfil  # noqa: E501
+    def account_identificacao_parceiro_post_with_http_info(self, login_senha_objeto, **kwargs):  # noqa: E501
+        """Cria um login para usuário.  # noqa: E501
 
-        Returna uma lista composta por objetos do tipo perfil  # noqa: E501
+        Cria um novo login que será usado para acesso ao sistema.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.perfil_get_with_http_info(async_req=True)
+        >>> thread = api.account_identificacao_parceiro_post_with_http_info(login_senha_objeto, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param float limite: Número máximo de elementos
-        :param float deslocamento: Número de deslocamento (offset) dos elementos
-        :param str campos: Lista de campos para ser inclusivamente filtrados
+        :param LoginSenhaObjeto login_senha_objeto: Dados para criação do login (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -86,14 +82,14 @@ class DevelopersApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(ListaPerfilUsuario, status_code(int), headers(HTTPHeaderDict))
+        :return: tuple(LoginCriado, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = ['limite', 'deslocamento', 'campos']  # noqa: E501
+        all_params = ['login_senha_objeto']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -103,22 +99,20 @@ class DevelopersApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method perfil_get" % key
+                    " to method account_identificacao_parceiro_post" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
+        # verify the required parameter 'login_senha_objeto' is set
+        if self.api_client.client_side_validation and ('login_senha_objeto' not in local_var_params or  # noqa: E501
+                                                        local_var_params['login_senha_objeto'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `login_senha_objeto` when calling `account_identificacao_parceiro_post`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'limite' in local_var_params:
-            query_params.append(('limite', local_var_params['limite']))  # noqa: E501
-        if 'deslocamento' in local_var_params:
-            query_params.append(('deslocamento', local_var_params['deslocamento']))  # noqa: E501
-        if 'campos' in local_var_params:
-            query_params.append(('campos', local_var_params['campos']))  # noqa: E501
 
         header_params = {}
 
@@ -126,22 +120,28 @@ class DevelopersApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'login_senha_objeto' in local_var_params:
+            body_params = local_var_params['login_senha_objeto']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['Api-Key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/perfil/', 'GET',
+            '/identificacao-parceiro/', 'POST',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ListaPerfilUsuario',  # noqa: E501
+            response_type='LoginCriado',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

@@ -34,17 +34,47 @@ class Erro(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'mensagem': 'object'
     }
 
     attribute_map = {
+        'mensagem': 'mensagem'
     }
 
-    def __init__(self, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, mensagem=None, local_vars_configuration=None):  # noqa: E501
         """Erro - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
+
+        self._mensagem = None
         self.discriminator = None
+
+        if mensagem is not None:
+            self.mensagem = mensagem
+
+    @property
+    def mensagem(self):
+        """Gets the mensagem of this Erro.  # noqa: E501
+
+        Conteúdo da mensagem de erro.  # noqa: E501
+
+        :return: The mensagem of this Erro.  # noqa: E501
+        :rtype: object
+        """
+        return self._mensagem
+
+    @mensagem.setter
+    def mensagem(self, mensagem):
+        """Sets the mensagem of this Erro.
+
+        Conteúdo da mensagem de erro.  # noqa: E501
+
+        :param mensagem: The mensagem of this Erro.  # noqa: E501
+        :type: object
+        """
+
+        self._mensagem = mensagem
 
     def to_dict(self):
         """Returns the model properties as a dict"""

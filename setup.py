@@ -28,12 +28,14 @@ setup(
     name=NAME,
     version=VERSION,
     description="Criação de Contas",
+    author="OpenAPI Generator community",
     author_email="cadastro_api@orama.com.br",
     url="",
     keywords=["OpenAPI", "OpenAPI-Generator", "Criação de Contas"],
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),
     include_package_data=True,
+    license="Apache 2.0",
     long_description="""\
     API de Criação de Contas.  # noqa: E501
     """
