@@ -14,7 +14,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "cadastro-orama"
-VERSION = "1.0.3rc2"
+VERSION = "1.0.3.rc2"
 # To install the library, run the following
 #
 # python setup.py install
