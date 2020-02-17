@@ -1,6 +1,6 @@
 # cadastro_orama.DevelopersApi
 
-All URIs are relative to *https://cadastro.orama.com.br/api/contas/v1.0*
+All URIs are relative to *https://cadastro.orama.com.br/api/contas/v2.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,18 +29,21 @@ configuration.api_key['X-Api-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['X-Api-Key'] = 'Bearer'
 
-# Defining host is optional and default to https://cadastro.orama.com.br/api/contas/v1.0
-configuration.host = "https://cadastro.orama.com.br/api/contas/v1.0"
-# Create an instance of the API class
-api_instance = cadastro_orama.DevelopersApi(cadastro_orama.ApiClient(configuration))
-login_senha_objeto = cadastro_orama.LoginSenhaObjeto() # LoginSenhaObjeto | Dados para criação do login
+# Defining host is optional and default to https://cadastro.orama.com.br/api/contas/v2.0
+configuration.host = "https://cadastro.orama.com.br/api/contas/v2.0"
 
-try:
-    # Cria um login para usuário.
-    api_response = api_instance.account_identificacao_parceiro_post(login_senha_objeto)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DevelopersApi->account_identificacao_parceiro_post: %s\n" % e)
+# Enter a context with an instance of the API client
+with cadastro_orama.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cadastro_orama.DevelopersApi(api_client)
+    login_senha_objeto = cadastro_orama.LoginSenhaObjeto() # LoginSenhaObjeto | Dados para criação do login
+
+    try:
+        # Cria um login para usuário.
+        api_response = api_instance.account_identificacao_parceiro_post(login_senha_objeto)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DevelopersApi->account_identificacao_parceiro_post: %s\n" % e)
 ```
 
 ### Parameters
